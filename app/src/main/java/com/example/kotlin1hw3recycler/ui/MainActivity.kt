@@ -1,5 +1,6 @@
 package com.example.kotlin1hw3recycler.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.kotlin1hw3recycler.databinding.ActivityMainBinding
@@ -20,13 +21,17 @@ class MainActivity : AppCompatActivity(), RamAdapter.OnClick {
     }
 
     private fun shareData() {
-
+        binding.btnSend.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra(KEY_SEND, list)
+            startActivity(intent)
+        }
     }
 
-    private fun init()  {
-            adapter = RamAdapter(fillList())
-            adapter.onClickListener(this)
-            binding.recyclerView.adapter = adapter
+    private fun init() {
+        adapter = RamAdapter(fillList())
+        adapter.onClickListener(this)
+        binding.recyclerView.adapter = adapter
     }
 
     private fun fillList(): MutableList<String> {
@@ -37,12 +42,15 @@ class MainActivity : AppCompatActivity(), RamAdapter.OnClick {
         return img
     }
 
-    override fun onClicked(position: String){
+    override fun onClicked(position: String) {
         list.add(position)
     }
 
-    override fun onRemove(position: String){
+    override fun onRemove(position: String) {
         list.remove(position)
     }
 
+    companion object {
+        const val KEY_SEND = "key"
+    }
 }
