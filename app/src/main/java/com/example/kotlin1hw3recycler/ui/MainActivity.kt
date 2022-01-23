@@ -20,18 +20,18 @@ class MainActivity : AppCompatActivity(), RamAdapter.OnClick {
         shareData()
     }
 
-    private fun shareData() {
-        binding.btnSend.setOnClickListener {
-            val intent = Intent(this, SecondActivity::class.java)
-            intent.putExtra(KEY_SEND, list)
-            startActivity(intent)
-        }
-    }
-
     private fun init() {
         adapter = RamAdapter(fillList())
         adapter.onClickListener(this)
         binding.recyclerView.adapter = adapter
+    }
+
+    private fun shareData() {
+        binding.btnSend.setOnClickListener {
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putStringArrayListExtra(KEY_SEND, list)
+            startActivity(intent)
+        }
     }
 
     private fun fillList(): MutableList<String> {

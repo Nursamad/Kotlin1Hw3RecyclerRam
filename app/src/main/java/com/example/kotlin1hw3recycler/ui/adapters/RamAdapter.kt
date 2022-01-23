@@ -42,15 +42,18 @@ class RamAdapter(private val list: MutableList<String>) :
                 if (transparentView.visibility == View.GONE) {
                     transparentView.visibility = View.VISIBLE
                     onClick.onClicked(ram)
-                } else
+                } else{
                     binding.transparentView.visibility = View.GONE
-                    onClick.onRemove(ram)
+                onClick.onRemove(ram)
             }
         }
     }
+}
 
     interface OnClick {
         fun onClicked(position: String)
         fun onRemove(position: String)
     }
 }
+
+
