@@ -1,3 +1,17 @@
+//< ? xml version = "1.0" encoding = "UTF-8" ? >
+//        < project version = "4" >
+//        < component name = "AndroidLayouts" >
+//        < shared >
+//        < config / >
+//        < /shared>
+//  </ component >
+//        < component name = "AutoImportSettings" >
+//        < option name = "autoReloadType" value = "NONE" / >
+//        < /component>
+//  <component name="ChangeListManager">
+//    <list default="true" id="1aca7c17-20da-4890-8efb-5e23ade6e851" name="Default Changelist" comment="">
+//      <change afterPath="$PROJECT_DIR$/.idea / vcs.xml " afterDir=" false " />
+//        < change beforePath = "$PROJECT_
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
@@ -6,7 +20,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.4"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
